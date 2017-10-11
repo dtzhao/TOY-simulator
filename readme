@@ -1,0 +1,18 @@
+How to run the applet:
+
+1. Open toy.html in a web browser (Chrome recommended). You may want to zoom in/out on the SVG according to personal viewing preference.
+2. Open the debugger console (option+command+i on Mac). I recommend the right dockside view for ease of use.
+3. The program takes console commands of the form
+
+       > main('10100101', '00101111', 'add', .0001)
+
+   where args[0] and args[1] must be strings representing 8-bit binary numbers,
+   args[2] must be one of 'add', 'xor', 'and'
+   args[3] is an optional animation delay parameter in ms (I suggest using a very small value).
+
+4. Once the simulation concludes, the 8-bit binary result can be read from left-to-right from the bottom output buses (red=1, grey=0).
+
+***IMPORTANT***
+Please note that the solution printed as console output is only accurate when animation delay is set to 0.
+(The bug has to do with the fact that our simulation function is async, and the program evaluates the CSS
+class values of the output wires (all off by default) before the simulation concludes.)
